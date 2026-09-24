@@ -1,5 +1,5 @@
 import { InvokeFunctionExpr } from "@angular/compiler";
-import { Component, Input, computed, Output, input, EventEmitter } from "@angular/core";
+import { Component, Input, computed, Output, input, EventEmitter, output } from "@angular/core";
 import { ActivationStart } from "@angular/router";
 
 
@@ -13,7 +13,7 @@ export class UserComponent {
 @Input({ required: true}) id!: string; 
 @Input({required: true}) avatar!: string; 
 @Input({required: true}) name!: string; 
-@Output() select = new EventEmitter(); 
+@Output() select = new EventEmitter<string>(); 
 
 
 get imagePath() {
