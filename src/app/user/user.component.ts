@@ -1,7 +1,7 @@
 import { InvokeFunctionExpr } from "@angular/compiler";
 import { Component, Input, computed, Output, input, EventEmitter, output } from "@angular/core";
 import { ActivationStart } from "@angular/router";
-import { User } from "./user.model";
+import { type User } from "./user.model";
 
 
 
@@ -15,6 +15,7 @@ import { User } from "./user.model";
 })
 export class UserComponent {
     @Input({ required: true }) user!: User;
+    @Input({required: true }) selected!: boolean; 
     @Output() select = new EventEmitter<string>();
 
 
