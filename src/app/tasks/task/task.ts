@@ -10,7 +10,7 @@ import { OutletContext } from '@angular/router';
 })
 export class Task {
 @Input({ required: true }) task!: task;
-@Output() complete = new EventEmitter(); 
+@Output() complete = new EventEmitter<string>(); 
 
 onCompleteTask () {
   this.complete.emit(this.task.id); 

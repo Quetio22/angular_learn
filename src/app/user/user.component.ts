@@ -3,10 +3,6 @@ import { Component, Input, computed, Output, input, EventEmitter, output } from 
 import { ActivationStart } from "@angular/router";
 import { type User } from "./user.model";
 
-
-
-
-
 @Component({
     selector: 'app-user',
     standalone: true,
