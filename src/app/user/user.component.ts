@@ -2,12 +2,14 @@ import { InvokeFunctionExpr } from "@angular/compiler";
 import { Component, Input, computed, Output, input, EventEmitter, output } from "@angular/core";
 import { ActivationStart } from "@angular/router";
 import { type User } from "./user.model";
+import { Card } from "../shared/card/card";
 
 @Component({
     selector: 'app-user',
     standalone: true,
     templateUrl: './user.component.html',
-    styleUrl: './user.component.css'
+    styleUrl: './user.component.css',
+    imports: [Card]
 })
 export class UserComponent {
     @Input({ required: true }) user!: User;
