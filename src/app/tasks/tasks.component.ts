@@ -13,18 +13,20 @@ import { TaskService } from "./tasks.services";
     styleUrl: './tasks.component.css'
 })
 export class TaskComponent {
+onCompleteTask($event: string) {
+throw new Error('Method not implemented.');
+}
     @Input({required: true}) id!: string; 
     @Input({required: true}) name!: string; 
     isAddingTask = false; 
-    taskService: TaskService;
     
     
-    constructor(tasksSerevice: TaskService) {
-        this.taskService = tasksSerevice;
+    
+    constructor(private tasksService: TaskService) {
     }
 
     get selectedUserTasks() {
-        return this.taskService.getUserTasks(this.id) 
+        return this.tasksService.getUserTasks(this.id) 
     }
 
      onStartAddTask() {
